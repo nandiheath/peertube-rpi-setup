@@ -15,3 +15,15 @@ sudo sh -c 'echo "deb https://download.docker.com/linux/raspbian/ stretch stable
 sudo systemctl start docker.service
 
 # restart shell?
+
+# install docker-compose
+
+sudo apt install python3 python3-pip -y
+
+sudo pip3 install docker-compose
+
+git clone https://github.com/nandiheath/peertube-rpi-setup.git
+
+cd peertube-rpi-setup
+
+docker-compose up -d
