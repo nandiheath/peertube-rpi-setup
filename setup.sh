@@ -27,3 +27,7 @@ git clone https://github.com/nandiheath/peertube-rpi-setup.git
 cd peertube-rpi-setup
 
 docker-compose up -d
+
+# setup data
+
+sudo chmod 600 docker-volume/traefik/acme.json
