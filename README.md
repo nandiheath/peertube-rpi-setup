@@ -26,11 +26,15 @@ exit
 
 cd production
 
+## setup the host name
+sed -i 's/rpi1.tvhk.network/[yourhost]/g' .env
+
 # Run without daemon to make sure everything is OK
 
 docker-compose up
 # docker-compose up -d
 
+# and now it is listening on 80/443 with the hostname, add a A record pointing to your machine
 ```
 
 ## FAQ
