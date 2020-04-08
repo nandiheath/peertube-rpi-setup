@@ -6,28 +6,16 @@ sudo apt-get update && apt-get install apt-transport-https ca-certificates softw
 
 curl -fsSL get.docker.com -o get-docker.sh && sh get-docker.sh
 
-sudo usermod -aG docker ${USER}
-
 sudo curl https://download.docker.com/linux/raspbian/gpg
 
 sudo sh -c 'echo "deb https://download.docker.com/linux/raspbian/ stretch stable" >> /etc/apt/sources.list'
 
 sudo systemctl start docker.service
 
-# restart shell?
-
-# install docker-compose
+sudo usermod -aG docker ${USER}
 
 sudo apt install python3 python3-pip -y
 
 sudo pip3 install docker-compose
 
 git clone https://github.com/nandiheath/peertube-rpi-setup.git
-
-cd peertube-rpi-setup
-
-docker-compose up -d
-
-# setup data
-
-sudo chmod 600 docker-volume/traefik/acme.json
